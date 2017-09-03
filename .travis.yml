@@ -1,0 +1,15 @@
+language: node_js
+sudo: false
+services:
+  - mysql
+node_js:
+  - "node"
+cache:
+  directories:
+    - "node_modules"
+install:
+  - npm install
+script:
+  - npm test
+notifications:
+  email: false
