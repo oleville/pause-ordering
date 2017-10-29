@@ -3,12 +3,19 @@ import express from 'express'
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  models.Orders.findAll()
-  .then((orders) => {
-    console.log(orders)
+router.get('/', async (req, res) => {
+  let orders
+  try {
+    orders = await models.orders.findAll()
+  } catch (err) {
+    console.log(err)
+    res.sendStatus(500)
+  }
+  if (orders) {
     res.send(orders)
-  })
+  } else {
+    res.sendStatus(404)
+  }
 })
 
 module.exports = router
