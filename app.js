@@ -1,9 +1,9 @@
-var express = require('express')
-var cookieParser = require('cookie-parser')
-var bodyParser = require('body-parser')
+import express from 'express'
+import cookieParser from 'cookie-parser'
+import bodyParser from 'body-parser'
 
-const orders = require('./routes/orders')
-const toppings = require('./routes/toppings')
+import orders from './routes/orders'
+import toppings from './routes/toppings'
 
 const app = express()
 
