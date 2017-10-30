@@ -10,13 +10,13 @@ router.get('/', async (req, res) => {
   } catch (err) {
     console.log(err)
     res.sendStatus(500)
+    return orders
   }
   if (orders) {
     res.send(orders)
   } else {
     res.sendStatus(404)
   }
-  return orders
 })
 
 module.exports = router
