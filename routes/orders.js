@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
   } else {
     res.sendStatus(404)
   }
+  return orders
 })
 
 module.exports = router
