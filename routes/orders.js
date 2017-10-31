@@ -6,11 +6,11 @@ const router = express.Router()
 router.get('/', async (req, res) => {
   let orders
   try {
-    orders = await models.orders.findAll()
+    orders = await models.Orders.findAll()
   } catch (err) {
     console.log(err)
     res.sendStatus(500)
-    return orders
+    return
   }
   if (orders) {
     res.send(orders)

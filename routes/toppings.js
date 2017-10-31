@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   } catch (err) {
     console.log(err)
     res.sendStatus(500)
-    return toppings
+    return
   }
   if (toppings) {
     res.send(toppings)
