@@ -4,16 +4,16 @@ import express from 'express'
 const router = express.Router()
 
 router.get('/', async (req, res) => {
-  let orders
+  let toppings
   try {
-    orders = await models.Orders.findAll()
+    toppings = await models.Toppings.findAll()
   } catch (err) {
     console.log(err)
     res.sendStatus(500)
     return
   }
-  if (orders) {
-    res.send(orders)
+  if (toppings) {
+    res.send(toppings)
   } else {
     res.sendStatus(404)
   }

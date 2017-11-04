@@ -1,8 +1,9 @@
-var express = require('express')
-var cookieParser = require('cookie-parser')
-var bodyParser = require('body-parser')
+import express from 'express'
+import cookieParser from 'cookie-parser'
+import bodyParser from 'body-parser'
 
-const orders = require('./routes/orders')
+import orders from './routes/orders'
+import toppings from './routes/toppings'
 
 const app = express()
 
@@ -11,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 
 app.use('/orders', orders)
+app.use('/toppings', toppings)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
