@@ -1,4 +1,4 @@
-import models from '../lib/models'
+import models from '../models'
 import express from 'express'
 
 const router = express.Router()
@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/', async (req, res) => {
   let toppings
   try {
-    toppings = await models.Toppings.findAll()
+    toppings = await models.toppings.findAll()
   } catch (err) {
     console.log(err)
     res.sendStatus(500)
