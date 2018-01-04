@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     total_cost: DataTypes.FLOAT
   }, {
     classMethods: {
-      associate: function(models) {
-        // associations can be defined here
+      orders.associate: function(models) {
+        orders.belongsToMany(models.item,{ through: 'item_order', as: 'item' })
       }
     }
   });

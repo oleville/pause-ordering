@@ -5,8 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     price_extra: DataTypes.FLOAT
   }, {
     classMethods: {
-      associate: function(models) {
-        // associations can be defined here
+      toppings.associate: function(models) {
+        toppings.belongsToMany(models.item,{ through: 'item_topping', as: 'item' })
+        toppings.hasOne(models.category)
       }
     }
   });
