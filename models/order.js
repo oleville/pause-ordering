@@ -1,17 +1,16 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var orders = sequelize.define('orders', {
+  const order = sequelize.define('order', {
     name: DataTypes.STRING,
     location: DataTypes.STRING,
     phone: DataTypes.INTEGER,
     email: DataTypes.STRING,
     total_cost: DataTypes.FLOAT
   }, {
-    classMethods: {
-      orders.associate: function(models) {
-        orders.belongsToMany(models.item,{ through: 'item_order', as: 'item' })
+          freezeTableName: true
+  })
+      order.associate = (models) => {
+        order.belongsToMany(models.item,{ through: 'item_order', as: 'item' })
       }
-    }
-  });
-  return orders;
-};
+  return order
+}
