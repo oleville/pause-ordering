@@ -11,10 +11,10 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      menuitemId: {
+      menu_item_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'menuitem',
+          model: 'menu_item',
           key: 'id'
         },
       },

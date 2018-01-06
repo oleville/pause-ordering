@@ -1,17 +1,17 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const menuitem = sequelize.define('menuitem', {
-    latenight: DataTypes.STRING
-    active: DataTypes.STRING
+  const menuitem = sequelize.define('menu_item', {
+    latenight: DataTypes.BOOLEAN
+    active: DataTypes.BOOLEAN
     name: DataTypes.STRING
-    deliverable: DataTypes.STRING
+    deliverable: DataTypes.BOOLEAN
     size: DataTypes.INTEGER
     price: DataTypes.INTEGER
- }, {
+  }, {
           freezeTableName: true
   })
-      menuitem.associate = (models) => {
-        menuitem.hasOne(models.category)
+      menu_item.associate = (models) => {
+        menu_item.hasOne(models.category)
       }
-  return menuitem
+  return menu_item
 }

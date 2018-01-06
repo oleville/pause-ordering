@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable(
-      'item-order',
+      'item_order',
       {
         createdAt: {
           allowNull: false,
@@ -13,7 +13,7 @@ module.exports = {
           allowNull: false,
           type: Sequelize.DATE,
         },
-        ItemId: {
+        item_id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
           references: {
@@ -22,7 +22,7 @@ module.exports = {
           },
           allowNull: false,
         },
-        ToppingId: {
+        topping_id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
           references: {

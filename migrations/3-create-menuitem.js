@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('menuitem', {
+    return queryInterface.createTable('menu_item', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,13 +12,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       latenight:{
-        type: Sequelize.STRING
+        type: Sequelize.BOOLEAN
       },
       active:{
-        type: Sequelize.STRING
+        type: Sequelize.BOOLEAN
       },
       deliverable:{
-        type: Sequelize.STRING
+        type: Sequelize.BOOLEAN
       },
       size:{
         type: Sequelize.INTEGER
